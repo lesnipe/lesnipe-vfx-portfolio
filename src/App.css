@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.my-swipper-portfolio {
+  width: 450px;
+  height: 400px;
   align-items: center;
+  background-color: #f9f9f9;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.my-swipper-slider-portfolio {
+  text-align: center;
+  font-size: 18px;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.my-swiper-gallery{
+  width: 450px;
+  height: 562px;
+  position: absolute;
+  top: 50%;
+  background-color: #171923;
+}
+
+.my-swiper-slider-gallery{
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+}
+
+.my-swiper-gallery img{
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ff7000 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: black !important;
+  opacity: 35% !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #ff7000 !important;
+  opacity: 100% !important;
 }
