@@ -97,13 +97,18 @@ export const HeroH1 = styled.span`
   }
 `;
 
+export const HeroParagraphsContainer = styled.div`
+  max-width: 600px;
+  justify-content: center;
+`
+
 export const HeroP = styled.p`
-  margin-top: 20px;
+  margin-top: 10px;
   color: #fff;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: start;
-  max-width: 680px;
+  font-size: 20px;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 550px;
 
   @media screen and (max-width: 768px) {
     font-size: 20px;

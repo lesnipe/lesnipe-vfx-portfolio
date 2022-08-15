@@ -9,6 +9,7 @@ import {
   Hero3dLogo,
   Hero3dLogoContainer,
   HeroH1,
+  HeroParagraphsContainer,
   HeroP,
 } from "./HeroElements";
 import Lesnipe from "../3dObjects/Lesnipe";
@@ -40,7 +41,11 @@ const HeroSection = () => {
       <HeroContent>
         <Hero3dLogoContainer>
           <Hero3dLogo>
-            <OrbitControls enableZoom={false} />
+            <OrbitControls
+              enableZoom={false}
+              autoRotate={true}
+              autoRotateSpeed={10}
+            />
             <ambientLight intensity={0.2} />
             <directionalLight position={[-2, 5, 2]} intensity={1} />
             <Suspense fallback={null}>
@@ -49,9 +54,14 @@ const HeroSection = () => {
           </Hero3dLogo>
         </Hero3dLogoContainer>
         <HeroH1 ref={el} />
-        <HeroP>Hello, I'm Myron Sfyrakis from Heraklion, Greece.</HeroP>
-        <HeroP>I've been doing video editing & special VFX since 2012.</HeroP>
-        <HeroP></HeroP>
+        <HeroParagraphsContainer>
+          <HeroP>
+            Hey, I'm Myron Sfyrakis, a Visual Effects Artist (VFX) based in
+            Heraklion, Crete, Greece.
+          </HeroP>
+          <HeroP>I've been doing video editing and VFX since 2012.</HeroP>
+          <HeroP>I'll make anything look unique and aesthetic.</HeroP>
+        </HeroParagraphsContainer>
       </HeroContent>
     </HeroContainer>
   );

@@ -4,11 +4,20 @@ import Hero from "../components/Hero";
 import Info from "../components/Info";
 import { infoObject1, infoObject2, infoObject3 } from "../components/Info/Data";
 import Footer from "../components/Footer";
+import VideoModal from "../components/Modal";
 
-
-const Home = ({ redirectTo, isOpen, toggleIsOpen, dataGallery, dataPortfolio}) => {
+const Home = ({
+  redirectTo,
+  isOpen,
+  toggleIsOpen,
+  dataGallery,
+  dataPortfolio,
+  portfolioModalIsOpen,
+  setPortfolioModalIsOpen,
+  videoForModal,
+  setVideoForModal
+}) => {
   return (
-    
     <>
       <Sidebar
         redirectTo={redirectTo}
@@ -21,9 +30,34 @@ const Home = ({ redirectTo, isOpen, toggleIsOpen, dataGallery, dataPortfolio}) =
         toggleIsOpen={toggleIsOpen}
       />
       <Hero />
-      <Info dataGallery={dataGallery} dataPortfolio={dataPortfolio}  {...infoObject1} />
-      <Info dataGallery={dataGallery} dataPortfolio={dataPortfolio} {...infoObject2} />
-      <Info dataGallery={dataGallery} dataPortfolio={dataPortfolio} {...infoObject3} />
+      <Info
+        dataGallery={dataGallery}
+        dataPortfolio={dataPortfolio}
+        portfolioModalIsOpen={portfolioModalIsOpen}
+        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+        videoForModal={videoForModal}
+        setVideoForModal={setVideoForModal}
+        {...infoObject1}
+      >
+      </Info>
+      <Info
+        dataGallery={dataGallery}
+        dataPortfolio={dataPortfolio}
+        portfolioModalIsOpen={portfolioModalIsOpen}
+        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+        videoForModal={videoForModal}
+        setVideoForModal={setVideoForModal}
+        {...infoObject2}
+      />
+      <Info
+        dataGallery={dataGallery}
+        dataPortfolio={dataPortfolio}
+        portfolioModalIsOpen={portfolioModalIsOpen}
+        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+        videoForModal={videoForModal}
+        setVideoForModal={setVideoForModal}
+        {...infoObject3}
+      />
       <Footer />
     </>
   );

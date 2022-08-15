@@ -15,6 +15,8 @@ function App() {
   const [dataPortfolio, setDataPortfolio] = useState({});
   const [fetchedData, setFetchedData] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [portfolioModalIsOpen, setPortfolioModalIsOpen] = useState(false);
+  const [videoForModal, setVideoForModal] = useState({});
 
   const redirectTo = (url) => {
     window.open(url, "_blank");
@@ -45,6 +47,7 @@ function App() {
     setDataGallery(dataGalleryLocal);
     setDataPortfolio(dataPortfolioLocal.reverse());
     setFetchedData(true);
+    
   }, []);
 
   console.log(dataPortfolio);
@@ -62,6 +65,10 @@ function App() {
               isOpen={isOpen}
               dataGallery={dataGallery}
               dataPortfolio={dataPortfolio}
+              portfolioModalIsOpen={portfolioModalIsOpen}
+              setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+              videoForModal={videoForModal}
+              setVideoForModal={setVideoForModal}
             />
           }
           exact

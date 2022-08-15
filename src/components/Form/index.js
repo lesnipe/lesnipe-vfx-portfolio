@@ -34,6 +34,10 @@ const Form = () => {
   const onSubmit = () => {
     const recaptchaToken = recaptcha.current.getValue();
     console.log(recaptchaToken);
+    if(recaptchaToken === ""){
+      showToast('error', `Failed to sent the message! (Check reCAPTCHA verification)`);
+      return
+    }
     emailjs
       .sendForm(
         REACT_APP_EMAILJS_SERVICE_ID,
@@ -50,7 +54,7 @@ const Form = () => {
           reset({ fullName: "", email: "", message: "" });
         },
         (error) => {
-          showToast('error', `Failed to sent the message! (Check reCAPTCHA verification)`);
+          showToast('error', `Error: ${error.text}`);
         }
       );
       recaptcha.current.reset();      

@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../ButtonElements";
 import {
   InfoContainer,
   InfoWrapper,
@@ -11,13 +10,11 @@ import {
   Heading1,
   Heading2,
   Subtitle,
-  BtnWrap,
-  ImgWrap,
-  Img,
 } from "./InfoElements";
-import Form from "../Form"
-import CarouselBox from "../Carousels/CarouselBox"
+import Form from "../Form";
+import CarouselBox from "../Carousels/CarouselBox";
 import CarouselHorizontal from "../Carousels/CarouselHorizontal";
+import VideoModal from "../Modal";
 
 const Info = ({
   dataGallery,
@@ -31,27 +28,43 @@ const Info = ({
   headline1,
   headline2,
   imgStart,
+  portfolioModalIsOpen,
+  setPortfolioModalIsOpen,
+  videoForModal,
+  setVideoForModal,
 }) => {
   return (
     <>
+      <VideoModal
+        data={videoForModal}
+        portfolioModalIsOpen={portfolioModalIsOpen}
+        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+      />
       <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine >
+                <TopLine>
                   {toplineIcon} {topline}
                 </TopLine>
                 <Heading1 lightText={lightText}>{headline1}</Heading1>
                 <Heading2>{headline2}</Heading2>
                 <Subtitle lightText={lightText}>{description}</Subtitle>
-              
               </TextWrapper>
             </Column1>
             <Column2>
-              {id === "portfolio" && <CarouselHorizontal dataPortfolio={dataPortfolio} />}
+              {id === "portfolio" && (
+                <CarouselHorizontal
+                  dataPortfolio={dataPortfolio}
+                  portfolioModalIsOpen={portfolioModalIsOpen}
+                  setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+                  videoForModal={videoForModal}
+                  setVideoForModal={setVideoForModal}
+                />
+              )}
               {id === "gallery" && <CarouselBox dataGallery={dataGallery} />}
-              {id === "contact" && <Form /> }
+              {id === "contact" && <Form />}
             </Column2>
           </InfoRow>
         </InfoWrapper>

@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
 import {getAuth, GoogleAuthProvider} from 'firebase/auth'
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
 const REACT_APP_SITE_KEY = process.env.REACT_APP_SITE_KEY;
 const REACT_APP_FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
@@ -25,10 +24,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider(REACT_APP_SITE_KEY),
-  isTokenAutoRefreshEnabled: true
-});
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 export const db = getFirestore(app);
