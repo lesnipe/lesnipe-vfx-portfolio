@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
 import {getAuth, GoogleAuthProvider} from 'firebase/auth'
 
-const REACT_APP_SITE_KEY = process.env.REACT_APP_SITE_KEY;
 const REACT_APP_FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
 const REACT_APP_FIREBASE_AUTH_DOMAIN = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
 const REACT_APP_FIREBASE_PROJECT_ID = process.env.REACT_APP_FIREBASE_PROJECT_ID;

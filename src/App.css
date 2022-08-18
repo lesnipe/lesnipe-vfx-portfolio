@@ -34,7 +34,7 @@ li {
   -webkit-align-items: center;
 }
 
-.my-swiper-gallery{
+.my-swiper-gallery {
   width: 450px;
   height: 562px;
   position: absolute;
@@ -42,20 +42,55 @@ li {
   background-color: #171923;
 }
 
-.my-swiper-slider-gallery{
+.my-swiper-slider-gallery {
   background-position: center;
   background-size: cover;
   background-color: black;
 }
 
-.my-swiper-gallery img{
+.my-swiper-gallery img {
   display: block;
   height: 100%;
   width: 100%;
   background-color: black;
 }
 
-.swiper-button-prev, .swiper-button-next {
+@media screen and (max-width: 768px) {
+  .my-swipper-portfolio {
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .my-swipper-portfolio {
+    width: 300px;
+    height: 400px;
+  }
+  .my-swiper-gallery {
+    width: 350px;
+    height: 437px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .my-swipper-portfolio {
+    width: 250px;
+    height: 400px;
+  }
+  .my-swiper-gallery {
+    width: 250px;
+    height: 300px;
+  }
+  .g-recaptcha {
+    transform: scale(0.71);
+    -webkit-transform: scale(0.71);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
   color: #ff7000 !important;
 }
 

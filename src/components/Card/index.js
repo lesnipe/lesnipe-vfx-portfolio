@@ -1,23 +1,14 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import { CardActionArea} from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 
-
-const CustomCard = ({
-  data,
-  portfolioModalIsOpen,
-  setPortfolioModalIsOpen,
-  videoForModal,
-  setVideoForModal,
-}) => {
-
+const CustomCard = ({ data, portfolioModalToggleIsOpen, setVideoForModal }) => {
   const cardClickHandler = () => {
-    console.log("Clicked on " + data.title);
-    const setupVideoModal = () => setVideoForModal(data);
-    const setupFlagModal = () => setPortfolioModalIsOpen(true);
+    setVideoForModal(data);
+    portfolioModalToggleIsOpen();
   };
 
   return (
@@ -32,9 +23,7 @@ const CustomCard = ({
         },
       }}
     >
-      <CardActionArea
-        onClick={cardClickHandler}
-      >
+      <CardActionArea onClick={cardClickHandler}>
         <CardMedia
           component="img"
           height="100%"

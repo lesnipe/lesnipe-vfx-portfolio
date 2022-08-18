@@ -14,7 +14,6 @@ import {
 import Form from "../Form";
 import CarouselBox from "../Carousels/CarouselBox";
 import CarouselHorizontal from "../Carousels/CarouselHorizontal";
-import VideoModal from "../Modal";
 
 const Info = ({
   dataGallery,
@@ -29,17 +28,12 @@ const Info = ({
   headline2,
   imgStart,
   portfolioModalIsOpen,
-  setPortfolioModalIsOpen,
+  portfolioModalToggleIsOpen,
   videoForModal,
   setVideoForModal,
 }) => {
   return (
     <>
-      <VideoModal
-        data={videoForModal}
-        portfolioModalIsOpen={portfolioModalIsOpen}
-        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
-      />
       <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
           <InfoRow imgStart={imgStart}>
@@ -58,7 +52,7 @@ const Info = ({
                 <CarouselHorizontal
                   dataPortfolio={dataPortfolio}
                   portfolioModalIsOpen={portfolioModalIsOpen}
-                  setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+                  portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
                   videoForModal={videoForModal}
                   setVideoForModal={setVideoForModal}
                 />

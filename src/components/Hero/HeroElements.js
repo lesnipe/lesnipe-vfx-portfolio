@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { MdArrowForwardIos } from "react-icons/md";
 import { Canvas } from "@react-three/fiber";
 
 export const HeroContainer = styled.div`
@@ -12,6 +11,7 @@ export const HeroContainer = styled.div`
   height: 1080px;
   position: relative;
   z-index: 1;
+  background-color: black;
 
   :before {
     content: "";
@@ -41,22 +41,12 @@ export const HeroBg = styled.div`
   overflow: hidden;
 `;
 
-export const HeroBgVideo = styled.iframe`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  user-select: none;
-
-  @media (min-aspect-ratio: 16/9) {
-    height: 56.25vw;
-  }
-
-  @media (max-aspect-ratio: 16/9) {
-    width: 177.78vh;
-  }
+export const HeroBgVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: black;
 `;
 
 export const HeroContent = styled.div`
@@ -74,6 +64,13 @@ export const Hero3dLogoContainer = styled.div`
   height: 400px;
   margin-top: -20%;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 85%;
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const Hero3dLogo = styled(Canvas)`
@@ -87,7 +84,8 @@ export const HeroH1 = styled.span`
   color: #ff7000;
   font-size: 68px;
   font-weight: 800;
-  display: inline;
+  display: block;
+  text-align: center;
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
@@ -98,17 +96,18 @@ export const HeroH1 = styled.span`
 `;
 
 export const HeroParagraphsContainer = styled.div`
-  max-width: 600px;
+  max-width: 650px;
+  display: block;
   justify-content: center;
-`
+  align-items: center;
+`;
 
 export const HeroP = styled.p`
   margin-top: 10px;
   color: #fff;
   font-size: 20px;
   font-weight: 600;
-  justify-items: center;
-  max-width: 550px;
+  max-width: 100%;
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
@@ -116,20 +115,4 @@ export const HeroP = styled.p`
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
-`;
-
-export const HeroBtnWrapper = styled.div`
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @media screen and (max-width: 768px) {
-    transform: scale(0.8);
-  }
-`;
-
-export const ArrowStart = styled(MdArrowForwardIos)`
-  margin-left: 8px;
-  font-size: 20px;
-  font-weight: 1000;
 `;

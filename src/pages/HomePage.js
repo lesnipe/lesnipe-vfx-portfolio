@@ -13,9 +13,9 @@ const Home = ({
   dataGallery,
   dataPortfolio,
   portfolioModalIsOpen,
-  setPortfolioModalIsOpen,
+  portfolioModalToggleIsOpen,
   videoForModal,
-  setVideoForModal
+  setVideoForModal,
 }) => {
   return (
     <>
@@ -30,21 +30,28 @@ const Home = ({
         toggleIsOpen={toggleIsOpen}
       />
       <Hero />
+      {videoForModal && (
+        <VideoModal
+          data={videoForModal}
+          portfolioModalIsOpen={portfolioModalIsOpen}
+          portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
+          setVideoForModal={setVideoForModal}
+        />
+      )}
       <Info
         dataGallery={dataGallery}
         dataPortfolio={dataPortfolio}
         portfolioModalIsOpen={portfolioModalIsOpen}
-        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+        portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
         videoForModal={videoForModal}
         setVideoForModal={setVideoForModal}
         {...infoObject1}
-      >
-      </Info>
+      ></Info>
       <Info
         dataGallery={dataGallery}
         dataPortfolio={dataPortfolio}
         portfolioModalIsOpen={portfolioModalIsOpen}
-        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+        portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
         videoForModal={videoForModal}
         setVideoForModal={setVideoForModal}
         {...infoObject2}
@@ -53,7 +60,7 @@ const Home = ({
         dataGallery={dataGallery}
         dataPortfolio={dataPortfolio}
         portfolioModalIsOpen={portfolioModalIsOpen}
-        setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+        portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
         videoForModal={videoForModal}
         setVideoForModal={setVideoForModal}
         {...infoObject3}

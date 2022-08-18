@@ -1,127 +1,118 @@
-  
+.portfolio-form form {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
-  
-  .portfolio-form form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  
-  .portfolio-form .form {
-    background: #0e101c;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .portfolio-form p {
-    color: #ff7000;
-    font-style: italic;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
- 
-  
-  .portfolio-form input {
-   
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 4px;
-    border: 1px solid #090909;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    background-color: transparent;
-  }
-  
-  .portfolio-form textarea {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 500px;
-    height: 10rem;
-    max-height: 400px;
-    border-radius: 4px;
-    border: 1px solid #090909;
-    background-color: transparent;
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-  
-  .portfolio-form  button[type="submit"],
-  .portfolio-form  input[type="submit"] {
-    background: #ff7000;
-    color: white;
-    text-transform: uppercase;
-    font-family: 'Inter' !important;
-    border: none;
-    margin-top: 20px;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 10px;
-  }
-  
-  .portfolio-form  button[type="submit"]:hover,
-  .portfolio-form  input[type="submit"]:hover {
-    cursor: pointer;
-    background: #090909;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .portfolio-form button[type="submit"]:active,
-  .portfolio-form input[type="button"]:active,
-  .portfolio-form input[type="submit"]:active {
-    transition: 0.3s all;
-    transform: translateY(3px);
-    border: 1px solid transparent;
-    opacity: 0.8;
-  }
-  
-  .portfolio-form input:disabled {
-    opacity: 0.4;
-  }
-  
-  .portfolio-form  input[type="button"]:hover {
-    transition: 0.3s all;
-  }
-  
-  .portfolio-form button[type="submit"],
-  input[type="button"],
-  input[type="submit"] {
-    -webkit-appearance: none;
-  }
+.portfolio-form .form {
+  background: #0e101c;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
-  
-  .portfolio-form button[type="button"] {
-    display: block;
-    appearance: none;
-    background: #333;
-    color: white;
-    border: none;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
-  .portfolio-form pre {
-    color: white;
-  }
-  
-  .portfolio-form hr {
-    margin-top: 30px;
-  }
-  
-  .portfolio-form button {
-    display: block;
-    /* appearance: none; */
-    margin-top: 40px;
-    border: 1px solid #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 1000;
-  }
-  
+.portfolio-form p {
+  color: #ff7000;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.portfolio-form input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 4px;
+  border: 1px solid #090909;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.portfolio-form textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  height: 10rem;
+  max-height: 400px;
+  border-radius: 4px;
+  border: 1px solid #090909;
+  background-color: transparent;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.portfolio-form button[type="submit"],
+.portfolio-form input[type="submit"] {
+  background: #ff7000;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Inter" !important;
+  border: none;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.portfolio-form button[type="submit"]:hover,
+.portfolio-form input[type="submit"]:hover {
+  cursor: pointer;
+  background: #090909;
+  transition: 0.3s ease-in-out;
+}
+
+.portfolio-form button[type="submit"]:active,
+.portfolio-form input[type="button"]:active,
+.portfolio-form input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+.portfolio-form input:disabled {
+  opacity: 0.4;
+}
+
+.portfolio-form input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+.portfolio-form button[type="submit"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.portfolio-form button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #333;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.portfolio-form pre {
+  color: white;
+}
+
+.portfolio-form hr {
+  margin-top: 30px;
+}
+
+.portfolio-form button {
+  display: block;
+  margin-top: 40px;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 1000;
+}

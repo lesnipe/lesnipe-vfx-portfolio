@@ -9,11 +9,10 @@ import "swiper/css/navigation";
 const CarouselHorizontal = ({
   dataPortfolio,
   portfolioModalIsOpen,
-  setPortfolioModalIsOpen,
+  portfolioModalToggleIsOpen,
   videoForModal,
-  setVideoForModal
+  setVideoForModal,
 }) => {
-
   return (
     <>
       <Swiper
@@ -31,7 +30,7 @@ const CarouselHorizontal = ({
             <CustomCard
               data={video}
               portfolioModalIsOpen={portfolioModalIsOpen}
-              setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+              portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
               videoForModal={videoForModal}
               setVideoForModal={setVideoForModal}
             />

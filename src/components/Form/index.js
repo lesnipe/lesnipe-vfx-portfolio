@@ -2,19 +2,17 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
-import { ToastContainer, toast } from "react-toastify";
-import  showToast from "../Toast/index.js"
+import { ToastContainer } from "react-toastify";
+import showToast from "../Toast/index.js";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
 
-// Consts from .env
 const REACT_APP_SITE_KEY = process.env.REACT_APP_SITE_KEY;
 const REACT_APP_EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const REACT_APP_EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 const REACT_APP_EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const Form = () => {
-
   const form = useRef();
   const recaptcha = useRef();
 
@@ -30,13 +28,15 @@ const Form = () => {
     email: "",
     message: "",
   };
-  
+
   const onSubmit = () => {
     const recaptchaToken = recaptcha.current.getValue();
-    console.log(recaptchaToken);
-    if(recaptchaToken === ""){
-      showToast('error', `Failed to sent the message! (Check reCAPTCHA verification)`);
-      return
+    if (recaptchaToken === "") {
+      showToast(
+        "error",
+        `Failed to sent the message! (Check reCAPTCHA verification)`
+      );
+      return;
     }
     emailjs
       .sendForm(
@@ -45,21 +45,20 @@ const Form = () => {
         form.current,
         REACT_APP_EMAILJS_PUBLIC_KEY,
         {
-          'g-recaptcha-response': recaptchaToken
+          "g-recaptcha-response": recaptchaToken,
         }
       )
       .then(
-        () => {    
-          showToast('success', `Message was sent successfully!`);
+        () => {
+          showToast("success", `Message was sent successfully!`);
           reset({ fullName: "", email: "", message: "" });
         },
         (error) => {
-          showToast('error', `Error: ${error.text}`);
+          showToast("error", `Error: ${error.text}`);
         }
       );
-      recaptcha.current.reset();      
+    recaptcha.current.reset();
   };
-  
 
   return (
     <form
@@ -75,7 +74,6 @@ const Form = () => {
         })}
       />
       {errors.fullName && <p>Please, fill in your full name!</p>}
-
       <input
         defaultValue={intialValues.email}
         placeholder="example@gmail.com"
@@ -96,7 +94,12 @@ const Form = () => {
         })}
       />
       {errors.message && <p>Please, fill in your message!</p>}
-      <ReCAPTCHA style={{paddingTop: '10px'}} ref={recaptcha} sitekey={REACT_APP_SITE_KEY} />
+      <ReCAPTCHA
+        className="g-recaptcha"
+        style={{ paddingTop: "10px", marginBottom: "-10px" }}
+        ref={recaptcha}
+        sitekey={REACT_APP_SITE_KEY}
+      />
       <input type="submit" />
       <ToastContainer />
     </form>

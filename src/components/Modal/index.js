@@ -1,30 +1,38 @@
-import Modal from "react-modal";
+import { CloseIcon } from "../Sidebar/SidebarElements";
+import {
+  ModalContainer,
+  ModalContent,
+  ModalExitButton,
+  ModalVideo,
+} from "./PortfolioModalElements";
 
-const VideoModal = ({ data , portfolioModalIsOpen, setPortfolioModalIsOpen}) => {
-  
-  const openModal = () => setPortfolioModalIsOpen(true);
-  const closeModal = () => setPortfolioModalIsOpen(false);
+const VideoModal = ({
+  data,
+  portfolioModalToggleIsOpen,
+  portfolioModalIsOpen,
+  setVideoForModal,
+}) => {
+  const VIDEO_ID = data.url.substring(data.url.length - 11, data.url.length);
 
-  
-    {portfolioModalIsOpen && <Modal
-      isOpen={portfolioModalIsOpen}
-      onAfterOpen={openModal}
-      onRequestClose={closeModal}
-      style={{
-        content: {
-          top: "50%",
-          left: "50%",
-          right: "auto",
-          bottom: "auto",
-          marginRight: "-50%",
-          transform: "translate(-50%, -50%)",
-        },
-      }}
-    >
-      <h1>{data.title && console.log("anoikse xd")}</h1>
-    </Modal>}
-  
-  
+  const handlerOnCloseModal = () => {
+    portfolioModalToggleIsOpen();
+    setVideoForModal(null);
+  };
+
+  return (
+    <ModalContainer isOpen={portfolioModalIsOpen} onClick={handlerOnCloseModal}>
+      <ModalExitButton>
+        <CloseIcon />
+      </ModalExitButton>
+      <ModalContent>
+        <ModalVideo
+          style={{ border: "none" }}
+          src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1`}
+          allowFullScreen={true}
+        />
+      </ModalContent>
+    </ModalContainer>
+  );
 };
 
 export default VideoModal;

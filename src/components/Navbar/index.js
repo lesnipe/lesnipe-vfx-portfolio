@@ -20,7 +20,7 @@ import {
 
 import Logo from "../../images/logo.png";
 
-const Navbar = ({ redirectTo, isOpen, toggleIsOpen }) => {
+const Navbar = ({ redirectTo, toggleIsOpen }) => {
   return (
     <>
       <Nav>

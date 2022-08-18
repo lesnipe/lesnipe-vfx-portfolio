@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
 export const Nav = styled.nav`
@@ -53,6 +52,7 @@ export const MobileIcon = styled.div`
     transition: all 0.2s ease-in-out;
     color: #ff7700;
   }
+
   @media screen and (max-width: 768px) {
     display: block;
     color: #fff;
@@ -76,6 +76,7 @@ export const NavMenu = styled.ul`
   @media screen and (max-width: 910px) {
     font-size: 1rem;
   }
+
   @media screen and (max-width: 830px) {
     font-size: 0.9rem;
   }
@@ -135,6 +136,7 @@ export const SocialMenu = styled.ul`
 export const SocialItem = styled.li`
   height: 20px;
   color: #ff7700;
+
   &:hover {
     color: #fff;
     transform: scale(1.1);

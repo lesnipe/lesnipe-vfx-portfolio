@@ -1,7 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
 import HomePage from "./pages/HomePage";
 import { getDocs, collection } from "firebase/firestore";
@@ -9,14 +8,13 @@ import { db } from "./services/firebase-config.js";
 import dataPortfolioLocal from "./resPortfolio.json";
 import dataGalleryLocal from "./resGallery.json";
 
-
 function App() {
   const [dataGallery, setDataGallery] = useState({});
   const [dataPortfolio, setDataPortfolio] = useState({});
   const [fetchedData, setFetchedData] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [portfolioModalIsOpen, setPortfolioModalIsOpen] = useState(false);
-  const [videoForModal, setVideoForModal] = useState({});
+  const [videoForModal, setVideoForModal] = useState(null);
 
   const redirectTo = (url) => {
     window.open(url, "_blank");
@@ -25,6 +23,22 @@ function App() {
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const portfolioModalToggleIsOpen = () => {
+    setPortfolioModalIsOpen(!portfolioModalIsOpen);
+  };
+
+  // Disable scrolling when sidebar modal is open
+  useEffect(() => {
+    isOpen && (document.body.style.overflow = 'hidden');
+    !isOpen && (document.body.style.overflow = 'unset');
+ }, [isOpen ]);
+
+ // Disable scrolling when portfolio video modal is open
+ useEffect(() => {
+  portfolioModalIsOpen && (document.body.style.overflow = 'hidden');
+  !portfolioModalIsOpen && (document.body.style.overflow = 'unset');
+}, [portfolioModalIsOpen ]);
 
   // Get data from Firebase
   // useEffect(() => {
@@ -47,11 +61,8 @@ function App() {
     setDataGallery(dataGalleryLocal);
     setDataPortfolio(dataPortfolioLocal.reverse());
     setFetchedData(true);
-    
+    console.log("Fetched data OK.");
   }, []);
-
-  console.log(dataPortfolio);
-  console.log(dataGallery);
 
   return fetchedData ? (
     <BrowserRouter>
@@ -66,7 +77,7 @@ function App() {
               dataGallery={dataGallery}
               dataPortfolio={dataPortfolio}
               portfolioModalIsOpen={portfolioModalIsOpen}
-              setPortfolioModalIsOpen={setPortfolioModalIsOpen}
+              portfolioModalToggleIsOpen={portfolioModalToggleIsOpen}
               videoForModal={videoForModal}
               setVideoForModal={setVideoForModal}
             />

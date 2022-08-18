@@ -16,18 +16,24 @@ export const CreditsAllWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 50px;
+
+  @media screen and (max-width: 480px) {
+    transform: scale(0.8);
+  }
 `;
 
 export const CreditsText = styled.p`
-  
-  color: ${({isTitle}) => (isTitle ? "#ffffff"  : "#ff7700")};
-  font-size: ${({isTitle}) => (isTitle ? "16px"  : "12px")};;
+  color: ${({ isTitle }) => (isTitle ? "#ffffff" : "#ff7700")};
+  font-size: ${({ isTitle }) => (isTitle ? "16px" : "12px")};
   font-weight: 600;
   white-space: nowrap;
   padding-top: 10px;
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: 480px) {
+    white-space: normal;
+  }
 `;
 
 export const BackToTopContainer = styled.div`
@@ -36,6 +42,10 @@ export const BackToTopContainer = styled.div`
   width: 200px;
   margin-top: 10px;
   display: block;
+
+  @media screen and (max-width: 480px) {
+    transform: scale(0.8);
+  }
 `;
 
 export const BackToTopArrow = styled(LinkScroll)`
