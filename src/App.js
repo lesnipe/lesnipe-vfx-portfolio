@@ -5,8 +5,6 @@ import Skeleton from "@mui/material/Skeleton";
 import HomePage from "./pages/HomePage";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "./services/firebase-config.js";
-import dataPortfolioLocal from "./resPortfolio.json";
-import dataGalleryLocal from "./resGallery.json";
 
 function App() {
   const [dataGallery, setDataGallery] = useState({});
@@ -40,29 +38,21 @@ function App() {
   !portfolioModalIsOpen && (document.body.style.overflow = 'unset');
 }, [portfolioModalIsOpen ]);
 
-  // Get data from Firebase
-  // useEffect(() => {
-  //   const getPortfolio = async () => {
-  //     const res = await getDocs(collection(db, "portfolio-yt-playlist"))
-  //     setDataPortfolio(res.docs.map((doc) => ({...doc.data()})).reverse())
-  //     // reverseObject(dataPortfolio);
-  //   }
-  //   const getGallery = async () => {
-  //     const res = await getDocs(collection(db, "portfolio-gallery"))
-  //     setDataGallery(res.docs.map((doc) => ({...doc.data()})))
-  //     setFetchedData(true);
-  //   }
-  //   getPortfolio();
-  //   getGallery();
-  // }, [])
-
-  // Get data from Local (for developing phasee)
+  // Fetch data from Firebase
   useEffect(() => {
-    setDataGallery(dataGalleryLocal);
-    setDataPortfolio(dataPortfolioLocal.reverse());
-    setFetchedData(true);
+    const getPortfolio = async () => {
+      const res = await getDocs(collection(db, "portfolio-yt-playlist"))
+      setDataPortfolio(res.docs.map((doc) => ({...doc.data()})).reverse())
+    }
+    const getGallery = async () => {
+      const res = await getDocs(collection(db, "portfolio-gallery"))
+      setDataGallery(res.docs.map((doc) => ({...doc.data()})))
+      setFetchedData(true);
+    }
+    getPortfolio();
+    getGallery();
     console.log("Fetched data OK.");
-  }, []);
+  }, [])
 
   return fetchedData ? (
     <BrowserRouter>
