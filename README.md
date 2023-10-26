@@ -2,13 +2,6 @@
 
 Welcome to my personal portfolio website! This site showcases my work in the field of Visual Effects (VFX) and Video Editing. You can explore various projects, learn about my skills and experience, and get in touch with me for collaboration opportunities.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Skills](#skills)
-- [Contact](#contact)
-- [License](#license)
-
 ## Introduction
 
 I am passionate about Visual Effects and Video Editing, and this portfolio is a collection of my best work. Each project is a testament to my dedication to creating compelling and immersive visual experiences.
