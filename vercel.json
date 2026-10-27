@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/d/:path*", "destination": "https://lesnipe-tracker.lesnipe-tracker.workers.dev/d/:path*" }
+  ]
+}
