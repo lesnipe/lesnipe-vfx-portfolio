@@ -67,7 +67,7 @@ const Sidebar = ({ redirectTo, isOpen, toggleIsOpen }) => {
             <SocialItem>
               <SocialLinks
                 onClick={() =>
-                  redirectTo("https://www.instagram.com/myron_sfyrakis/")
+                  redirectTo("https://www.instagram.com/lesnipe.vfx/")
                 }
               >
                 <FaInstagramSquare />
