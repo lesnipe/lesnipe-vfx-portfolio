@@ -51,6 +51,22 @@ export const SidebarMenu = styled.ul`
   }
 `;
 
+export const SidebarBookLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ff7700;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    transition: 0.2s ease-in-out;
+  }
+`;
+
 export const SidebarLink = styled(LinkScroll)`
   display: flex;
   align-items: center;

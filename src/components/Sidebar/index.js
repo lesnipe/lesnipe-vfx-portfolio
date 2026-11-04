@@ -6,6 +6,7 @@ import {
   SidebarMenu,
   SidebarWrapper,
   SidebarLink,
+  SidebarBookLink,
 } from "./SidebarElements";
 import { SocialMenu, SocialItem, SocialLinks } from "../Navbar/NavbarElements";
 import { FaInstagramSquare, FaYoutube, FaLinkedin } from "react-icons/fa";
@@ -62,6 +63,9 @@ const Sidebar = ({ redirectTo, isOpen, toggleIsOpen }) => {
           >
             Contact
           </SidebarLink>
+          <SidebarBookLink href="/book" target="_blank" rel="noopener noreferrer">
+            Book a filming
+          </SidebarBookLink>
 
           <SocialMenu isOpen={isOpen}>
             <SocialItem>

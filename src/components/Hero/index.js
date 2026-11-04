@@ -14,6 +14,7 @@ import {
   HeroH1,
   HeroParagraphsContainer,
   HeroP,
+  HeroBookBtn,
 } from "./HeroElements";
 import ReelVideo from "../../videos/video.mp4";
 import Lesnipe from "../3dObjects/Lesnipe";
@@ -56,6 +57,9 @@ const HeroSection = () => {
           </Hero3dLogo>
         </Hero3dLogoContainer>
         <HeroH1 ref={el} />
+        <HeroBookBtn href="/book" target="_blank" rel="noopener noreferrer">
+          Book a filming
+        </HeroBookBtn>
         <HeroParagraphsContainer>
           <HeroP>
             <BiUserPin

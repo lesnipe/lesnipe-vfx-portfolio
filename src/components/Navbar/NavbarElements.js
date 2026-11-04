@@ -116,6 +116,28 @@ export const NavLinks = styled(LinkScroll)`
   }
 `;
 
+export const NavBookLink = styled.a`
+  color: #000;
+  background: #ff7700;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  padding: 0 1rem;
+  height: 100%;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+    transition: 0.1s ease-in-out;
+  }
+`;
+
 export const SocialMenu = styled.ul`
   display: flex;
   align-items: center;

@@ -1,4 +1,4 @@
-# Personal Portfolio - Le Snipe' VFX
+# Personal Portfolio - Le Snipe Visuals
 
 Welcome to my personal portfolio website! This site showcases my work in the field of Visual Effects (VFX) and Video Editing. You can explore various projects, learn about my skills and experience, and get in touch with me for collaboration opportunities.
 

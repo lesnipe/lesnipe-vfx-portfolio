@@ -28,7 +28,7 @@ const Footer = () => {
         </BackToTopContainer>
         <CreditsAllWrapper>
           <CreditsText isTitle="true">
-            Le Snipe' Visuals © {year} - All rights reserved.
+            Le Snipe Visuals © {year} - All rights reserved.
           </CreditsText>
           <CreditsText>
             Passionately designed & developed by Myron Sfyrakis.

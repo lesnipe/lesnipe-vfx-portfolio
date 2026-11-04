@@ -95,6 +95,29 @@ export const HeroH1 = styled.span`
   }
 `;
 
+export const HeroBookBtn = styled.a`
+  margin: 20px 0 14px;
+  padding: 14px 36px;
+  border-radius: 50px;
+  background: #ff7700;
+  color: #000;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 17px;
+    padding: 12px 28px;
+  }
+`;
+
 export const HeroParagraphsContainer = styled.div`
   max-width: 650px;
   display: block;

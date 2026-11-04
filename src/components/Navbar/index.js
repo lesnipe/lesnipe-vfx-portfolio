@@ -13,6 +13,7 @@ import {
   NavItem,
   NavMenu,
   NavLinks,
+  NavBookLink,
   SocialMenu,
   SocialItem,
   SocialLinks,
@@ -86,6 +87,11 @@ const Navbar = ({ redirectTo, toggleIsOpen }) => {
               >
                 Contact
               </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavBookLink href="/book" target="_blank" rel="noopener noreferrer">
+                Book
+              </NavBookLink>
             </NavItem>
           </NavMenu>
           <SocialMenu>
