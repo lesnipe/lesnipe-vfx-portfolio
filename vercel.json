@@ -1,7 +1,8 @@
 {
   "buildCommand": "CI=false npm run build",
   "redirects": [
-    { "source": "/book", "destination": "https://cal.com/lesnipe", "permanent": false }
+    { "source": "/book", "destination": "https://cal.com/lesnipe", "permanent": false },
+    { "source": "/card", "destination": "/", "permanent": false }
   ],
   "rewrites": [
     { "source": "/d/:path*", "destination": "https://lesnipe-tracker.lesnipe-tracker.workers.dev/d/:path*" }
