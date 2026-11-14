@@ -6,5 +6,8 @@
   ],
   "rewrites": [
     { "source": "/d/:path*", "destination": "https://lesnipe-tracker.lesnipe-tracker.workers.dev/d/:path*" }
+  ],
+  "headers": [
+    { "source": "/links(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }
   ]
 }
